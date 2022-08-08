@@ -15,18 +15,15 @@ class Employee{  /* Capitcal case */
     String getDetails(){  /* camel case */
         return "Id :"+empId+" Name:"+firstName+" "+lastName+" Salary:"+empSalary;
     }
-
     String getName(){
         int a; /* no default value ofr local variables, it must be initialized before use */
        // System.out.println(a);
-        return firstName+" "+lastName;
+        return firstName+" "+lastName;       
     }
 }
 
-
 public class ClassDemo{
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) {    
         Employee emp1; /* this varible will point to object of type Employee */
         emp1=new Employee();// default constructor
         System.out.println(emp1.empId);
