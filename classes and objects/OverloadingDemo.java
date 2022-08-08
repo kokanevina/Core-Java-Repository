@@ -43,5 +43,10 @@ public class OverloadingDemo {
     double s=scanner.nextDouble();  
     double areasqr=shape.area(s);
     System.out.println("Area if square is "+areasqr);
+    
    } 
+
+   /* byte, short, int, long
+    * float , double
+    */
 }
