@@ -2,14 +2,14 @@ import java.util.Scanner;
 // lang package is by default imported
 class Shape{
 
-    double area(float radius){
+    float area(float radius){
         System.out.println(radius);
-        return 3.142*radius*radius;
+        return (float)3.142*radius*radius;
     }
-    double area(double length,double breadth){
+    protected double area(double length,double breadth){
         return  length*breadth;
     }
-    double area(double side){
+    public double area(double side){
         System.out.println(side);
         return side*side;
     }

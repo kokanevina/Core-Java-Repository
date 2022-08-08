@@ -27,6 +27,22 @@ class Employee{
      public void setFirstName(String firstName){
         this.firstName=firstName;
      }
+     public String getLastName(){
+        return lastName;
+    }
+    public void setLastName(String lastName){
+        this.lastName=lastName;
+     }
+     public double getEmpSalary()
+     {
+        return empSalary;
+     }
+     public void setEmpSalary(double empSalary)
+     {
+        this.empSalary=empSalary;
+     }
+
+
 }
 
 public class Encapsulation{
@@ -35,18 +51,18 @@ public class Encapsulation{
         emp1=new Employee();// default constructor
         System.out.println(emp1.getEmpId());
         System.out.println(emp1.getFirstName());
-        System.out.println(emp1.lastName);
-        System.out.println(emp1.empSalary);
+        //System.out.println(emp1.lastName);
+       // System.out.println(emp1.empSalary);
         String details=emp1.getDetails();
         System.out.println(details);
         emp1.setEmpId(120);
         emp1.setFirstName("Hari");
-        emp1.lastName="Kumar";
-        emp1.empSalary=45000;
-        System.out.println(emp1.empId);
-        System.out.println(emp1.firstName);
-        System.out.println(emp1.lastName);
-        System.out.println(emp1.empSalary);
+       // emp1.lastName="Kumar";
+       // emp1.empSalary=45000;
+      //  System.out.println(emp1.empId);
+      //  System.out.println(emp1.firstName);
+     //   System.out.println(emp1.lastName);
+      //  System.out.println(emp1.empSalary);
         details=emp1.getDetails();
         System.out.println(details);
     }
