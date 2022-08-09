@@ -1,4 +1,6 @@
-public class InheritanceDemo {
+
+
+public class OverridingDemo {
     public static void main(String[] args) {
         Employee emp=new Employee();
         emp.empId=123;
@@ -22,13 +24,22 @@ public class InheritanceDemo {
         mgr.setBranch("Sales");
         System.out.println(mgr); // manager toString
 
-        double gsm=mgr.calGross(); // call goes to superclass method 
+        double gsm=mgr.calGross(); // call goes to subclass overriding method 
         System.out.println("Gross salary is:"+mgr.grossSalary);
         System.out.println("Gross salary is:"+gsm);
 
         double nsm=mgr.calNet();
-        System.out.println("Gross salary is:"+mgr.netSalary);
-        System.out.println("Gross salary is:"+nsm);
+        System.out.println("Net salary is:"+mgr.netSalary);
+        System.out.println("Net salary is:"+nsm);
 
+       /*  emp->Employee Object
+        mgr->Manager Object */
+        showGross(emp);
+        showGross(mgr);
+    }
+    public static void showGross(Employee e){
+        System.out.println("Display fross salary of employee/manager");
+        double gs=e.calGross();
+        System.out.println("gross salary is :"+gs);
     }
 }
