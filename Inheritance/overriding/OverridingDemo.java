@@ -38,6 +38,7 @@ public class OverridingDemo {
         showGross(mgr);
     }
     public static void showGross(Employee e){
+        System.out.println(e.getClass());
         System.out.println("Display fross salary of employee/manager");
         double gs=e.calGross();
         System.out.println("gross salary is :"+gs);

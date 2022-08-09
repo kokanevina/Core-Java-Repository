@@ -4,6 +4,8 @@ public class Employee{
     public double basicSalary,grossSalary, netSalary;
     public double ta,da,hra,pf;
     protected final double pt=1200;
+
+    public String departmentName="HR";
 /* once we add own constr in class then java will stop providing a def constr */
     Employee(){
         System.out.println("In Employee d constr");

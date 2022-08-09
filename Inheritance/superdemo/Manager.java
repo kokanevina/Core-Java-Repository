@@ -5,9 +5,9 @@
  * constr using super keyword
 */
 public class Manager extends Employee{
-    private String branch;
+    public String branch;
     public double fa;
-
+    public String departmentName="Sales";
     public Manager(){
         super(); // this call happens internally
         System.out.println("In Manager d constr");
@@ -35,6 +35,10 @@ public class Manager extends Employee{
         grossSalary=super.calGross()+fa;
         return grossSalary;
     } 
+    public void displayDept(){
+        System.out.println(departmentName);
+        System.out.println(super.departmentName);
+    }
     public String toString(){
         return super.toString()+" branch :"+branch;
     }

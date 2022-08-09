@@ -17,6 +17,8 @@ public class SuperDemo {
         System.out.println("Gross salary is:"+gsm);
         double nsm=mgr.calNet();
         System.out.println("Net salary is:"+nsm);
+        System.out.println(mgr.departmentName); // own variable will be accessed
+        mgr.displayDept();
         System.out.println("--------------");
         SalesManager salesm=new SalesManager();
     }
