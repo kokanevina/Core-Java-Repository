@@ -46,8 +46,6 @@ public class TcpClient {
 	}
 	
 	public static void main(String[] args) {
-
-
 		try {
 			TcpClient client=new TcpClient();
 		} catch (UnknownHostException e) {
