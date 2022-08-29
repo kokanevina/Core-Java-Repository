@@ -1,4 +1,5 @@
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -7,6 +8,7 @@ import java.net.UnknownHostException;
 
 public class TcpClient {
 	DataOutputStream outputStream;
+	DataInputStream dataIpStream;
 	InetAddress serveraddress;
 	
 	public TcpClient() throws UnknownHostException {
@@ -16,6 +18,7 @@ public class TcpClient {
 		System.out.println("Client Establishing Connection with Server");
 		try(Socket clientSocket=new Socket(serveraddress,2020)){
 			outputStream =new DataOutputStream(clientSocket.getOutputStream());
+			dataIpStream=new DataInputStream(clientSocket.getInputStream());
 			chat();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -29,6 +32,8 @@ public class TcpClient {
 	public void chat() throws IOException{
 		String clientMessage="Hello How are you?";
 		outputStream.writeUTF(clientMessage);
+		String messageFromServer=dataIpStream.readUTF();
+		System.out.println(messageFromServer);
 	}
 	
 	public static void main(String[] args) {

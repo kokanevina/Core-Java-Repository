@@ -1,6 +1,7 @@
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -8,6 +9,7 @@ import java.net.Socket;
 public class TcpServer {
 		Socket socket;	
 		DataInputStream inputStream;
+		DataOutputStream dataOpStream;
 		public TcpServer() {
 			System.out.println("Connection Establishment with Client");		
 			try(ServerSocket ss=new ServerSocket(2020);    ){
@@ -15,6 +17,7 @@ public class TcpServer {
 				socket=ss.accept();
 				System.out.println("Connection Established...........");
 				inputStream=new DataInputStream(socket.getInputStream());
+				dataOpStream=new DataOutputStream(socket.getOutputStream());
 				chat();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -25,6 +28,8 @@ public class TcpServer {
 		public void chat() throws IOException{
 			String messagefromClient=inputStream.readUTF();
 			System.out.println(messagefromClient);
+			String serverMessage="I am fine What about you?";
+			dataOpStream.writeUTF(serverMessage);
 		}
 		public static void main(String[] args) {
 			TcpServer server=new TcpServer();
